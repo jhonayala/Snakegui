@@ -49,7 +49,6 @@ public class MainApp {
 		// Ahora creamos el tablero. Recordamos: no deja de ser un panel un poquito
 		// "especial"
 		tablero = new TableroJuego();
-
 		// Les damos las propiedades a nuestro tablero. Su color, tamaño y borde
 		tablero.setBorder(BorderFactory.createLineBorder(Color.black));
 		tablero.setBackground(new java.awt.Color(250, 100, 100));
@@ -113,7 +112,7 @@ public class MainApp {
 						// juego.
 
 			// actualizamos el estado del juego
-			if (contador % 20 == 0) { // cada 200ms nos movemos o crecemos...
+			if (contador % 5== 0) { // cada 50ms nos movemos o crecemos...
 				if (contador == 60) { // Cada 600ms crecemos y reseteamos el contador
 					contador = 0;
 					frame.tocaCrecer();
