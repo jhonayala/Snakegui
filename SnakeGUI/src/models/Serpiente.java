@@ -77,13 +77,13 @@ public class Serpiente {
 
 
     //la serpiente se muere porque se toca a si misma o porque se ha salido del tablero
-    public boolean estaMuerta(int iAlto, int iAncho) {
-    	boolean resultado;
-    	
-    	resultado = (seEstaTocandoEllaMisma() || seHaSalido(iAlto, iAncho));
-    	
-        return resultado;
-    }
+//    public boolean estaMuerta(int iAlto, int iAncho) {
+//    	boolean resultado;
+//    	
+//    	resultado = (seEstaTocandoEllaMisma() || seHaSalido(iAlto, iAncho));
+//    	
+//        return resultado;
+//    }
 
     //la cabeza, está tocando alguna parte de su cuerpo??
     private boolean seEstaTocandoEllaMisma() {

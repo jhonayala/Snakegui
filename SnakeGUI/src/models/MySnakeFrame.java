@@ -98,12 +98,12 @@ public class MySnakeFrame extends JFrame {
 	//Hay que ver si la serpiente sigue viva, pero sólo si estamos jugando y no en modo pausa...
 	public void comprobarEstado(int iAlto, int iAncho) {
 		if (jugando && !pausado) {
-			if (snake.estaMuerta(iAlto, iAncho)) {
-				//acabamos de matarnos. Hay que mostrar msg al final y ya no jugamos...
-				jugando = false;
-				mostrarFinal = true;
-				mostrado = false;
-			}
+//			if (snake.estaMuerta(iAlto, iAncho)) {
+//				//acabamos de matarnos. Hay que mostrar msg al final y ya no jugamos...
+//				jugando = false;
+//				mostrarFinal = true;
+//				mostrado = false;
+//			}
 		}
 	}
 	
