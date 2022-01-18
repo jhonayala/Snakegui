@@ -11,6 +11,7 @@ public class MyButtonListener implements ActionListener {
 	private MySnakeFrame snakeFrame;
 	private TableroJuego tablero;
 	private JLabel puntos;
+	private int dificultad;
 	
 	
 	public MyButtonListener(MySnakeFrame sf, TableroJuego t) {
@@ -18,6 +19,17 @@ public class MyButtonListener implements ActionListener {
 		tablero = t;
 		
 	}
+	public MyButtonListener(MySnakeFrame x,int y) {
+		snakeFrame=x;
+		dificultad=y;
+		
+		
+	}
+	
+	public int actiondificult(ActionEvent x) {
+		return dificultad;
+		}
+		
 	
 	@Override
 	public void actionPerformed(ActionEvent ae) {
