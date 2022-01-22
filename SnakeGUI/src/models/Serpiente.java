@@ -106,6 +106,7 @@ public class Serpiente {
     private boolean seHaSalido(int iAlto, int iAncho) {
         //Hacemos las comprobaciones sobre la cabeza
         Cuadrado cabeza = listaCuadrados.get(0);
+        
 
         return (cabeza.getX() < 0 || cabeza.getX() > iAncho || cabeza.getY() < 0 || cabeza.getY() > iAlto);
     }

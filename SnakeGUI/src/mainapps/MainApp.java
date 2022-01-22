@@ -15,7 +15,7 @@ import models.DifVent;
 import models.MyButtonListener;
 import models.MySnakeFrame;
 import models.TableroJuego;
-
+import models.VentTamaÒo;
 
 public class MainApp {
 
@@ -32,37 +32,24 @@ public class MainApp {
 		JButton start;
 		JButton pause;
 		ControlTeclado miControlador;
-	
-		DifVent difframe ;
-		JPanel difPanel;
-		int dificultad =20;
-		
-		
-		
 
-		
-		
+		DifVent difframe;
+		JPanel difPanel;
+		int dificultad = 20;
+
+		VentTamaÒo TamFrame;
+
 		// 1. Crear el frame.
 
 		frame = new MySnakeFrame();
-				
-		//ventan de dificultad
-		difframe=new  DifVent();
-	
-		
-		
-		
-		
-		
-		// asignamos el tama√±o a nuestra ventana, y hacemos que se cierre cuando nos
-				// pulsan
-				// la X de cerrar la ventana
-				frame.setSize(600, 600);
-				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
-				
+		TamFrame = new VentTamaÒo();
+		;
 
-		
+		// asignamos el tama√±o a nuestra ventana, y hacemos que se cierre cuando nos
+		// pulsan
+		// la X de cerrar la ventana
+		frame.setSize(TamFrame.getLado1(), TamFrame.getLado2() + 200);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		// 3. Ahora creamos los componentes y los ponemos en la frame (ventana).
 
@@ -76,7 +63,7 @@ public class MainApp {
 		// Les damos las propiedades a nuestro tablero. Su color, tama√±o y borde
 		tablero.setBorder(BorderFactory.createLineBorder(Color.black));
 		tablero.setBackground(new java.awt.Color(250, 100, 100));
-		tablero.setSize(600, 400);
+		tablero.setSize(TamFrame.getLado1(), TamFrame.getLado2());
 
 		// Le damos un enlace al tablero para que sepa qui√©n es su frame (ventana) y
 		// as√≠
@@ -128,33 +115,33 @@ public class MainApp {
 		mainPanel.add(tablero, BorderLayout.CENTER);
 		frame.add(mainPanel);
 
-		frame.setVisible(true); // activamos la ventana principal para que sea "pintable"
-		//ventan de dificultad
-				difframe=new  DifVent();
+		// ventan de dificultad
+		difframe = new DifVent();
+// Ventana de TamaÒo
+		TamFrame.TamVisible();
+		frame.setVisible(true);
+		contador=0;
 
-		contador = 0; 
-		
-		
 		// nuestro control de los pasos del tiempo. Cada vez que contador cuenta un
-						// paso, pasan 10ms
+		// paso, pasan 10ms
 
 		while (true) { // por siempre jam√°s (hasta que nos cierren la ventana) estamos controlando el
 						// juego.
-switch(difframe.getDificultad()) {
-case 20:
-	dificultad=20;
-	break;
-case 10:
-	dificultad=10;
-	break;
-case 5:
-	dificultad=5;
-	break;
-case 1:
-	dificultad=1;
-	
-	break;
-}
+			switch (difframe.getDificultad()) {
+			case 20:
+				dificultad = 20;
+				break;
+			case 10:
+				dificultad = 10;
+				break;
+			case 5:
+				dificultad = 5;
+				break;
+			case 1:
+				dificultad = 1;
+
+				break;
+			}
 			// actualizamos el estado del juego
 			if (contador % dificultad == 0) { // cada 200ms nos movemos o crecemos...
 				if (contador == 60) { // Cada 600ms crecemos y reseteamos el contador
